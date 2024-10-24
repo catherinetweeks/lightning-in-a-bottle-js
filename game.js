@@ -1,29 +1,29 @@
-// Create a Phaser game config
-let config = {
-    type: Phaser.AUTO,  // Automatically use WebGL or Canvas
-    width: 800,         // Game width
-    height: 600,        // Game height
+var config = {
+    type: Phaser.AUTO,
+    width: 960,
+    height: 540,
+    pixelArt:true,
     scene: {
-        preload: preload,  // Preload assets
-        create: create,    // Create game objects
-        update: update     // Update game loop
+        preload: preload,
+        create: create,
+        update: update
     }
 };
 
-// Initialize the game
-let game = new Phaser.Game(config);
+var game = new Phaser.Game(config);
 
-// Preload function: Load assets
-function preload() {
-    this.load.image('background', 'images/background.png'); // Load an image asset
+function preload ()
+{
+    this.load.image('background', 'images/background.png');
 }
 
-// Create function: Add objects to the scene
-function create() {
-    this.add.image(400, 300, 'background');  // Add the image to the center
+function create ()
+{
+    let bg = this.add.image(0, 0, 'background');
+    bg.setOrigin(0, 0);
+    bg.setDisplaySize(960, 540);
 }
 
-// Update function: Called in a loop
-function update() {
-    // Handle game logic, physics, etc.
+function update ()
+{
 }
